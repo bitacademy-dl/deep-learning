@@ -1,4 +1,4 @@
-# and gate: perceptron
+# or gate: perceptron
 import os
 import sys
 import numpy as np
@@ -10,8 +10,8 @@ except ImportError:
     print('Library Module Can Not Found')
 
 
-def AND(x):
-    w, b = np.array([0.5, 0.5]), np.array(-0.7)
+def OR(x):
+    w, b = np.array([0.5, 0.5]), -0.2
 
     a = np.sum(x * w) + b
 
@@ -22,14 +22,14 @@ def AND(x):
 
 
 if __name__ == '__main__':
-    y1 = AND(np.array([0, 0]))
+    y1 = OR(np.array([0, 0]))
     print(y1)
 
-    y2 = AND(np.array([0, 1]))
+    y2 = OR(np.array([0, 1]))
     print(y2)
 
-    y3 = AND(np.array([1, 0]))
+    y3 = OR(np.array([1, 0]))
     print(y3)
 
-    y4 = AND(np.array([1, 1]))
+    y4 = OR(np.array([1, 1]))
     print(y4)
