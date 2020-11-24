@@ -2,8 +2,6 @@
 import os
 import sys
 import numpy as np
-from matplotlib import pyplot as plt
-from pathlib import Path
 try:
     sys.path.append(os.path.join(os.getcwd()))
     from ex02 import z1

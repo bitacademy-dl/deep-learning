@@ -1,8 +1,6 @@
 # 3층 신경망 신호 전달 구현6: 출력층 출력함수 σ() 적용
 import os
 import sys
-import numpy as np
-from matplotlib import pyplot as plt
 from pathlib import Path
 try:
     sys.path.append(os.path.join(os.getcwd()))

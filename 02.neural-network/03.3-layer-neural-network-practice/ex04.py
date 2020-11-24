@@ -1,8 +1,6 @@
 # 3층 신경망 신호 전달 구현4: 은닉 2층 활성함수 h() 적용
 import os
 import sys
-import numpy as np
-from matplotlib import pyplot as plt
 from pathlib import Path
 try:
     sys.path.append(os.path.join(os.getcwd()))
