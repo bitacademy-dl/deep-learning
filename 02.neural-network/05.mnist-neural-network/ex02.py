@@ -2,8 +2,6 @@
 import os
 import sys
 import numpy as np
-from PIL import Image
-from matplotlib import pyplot as plt
 from pathlib import Path
 try:
     sys.path.append(os.path.join(Path(os.getcwd()).parent, 'lib'))
@@ -23,10 +21,6 @@ print(w3.shape) # 100 x 10 matrix
 print(b1.shape) # 50 Vector
 print(b2.shape) # 100 Vector
 print(b3.shape) # 10 Vector
-
-
-
-
 
 # 2. 학습/시험 데이터 가져오기
 (train_x, train_t), (test_x, test_t) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
