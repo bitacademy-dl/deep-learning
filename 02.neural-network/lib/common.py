@@ -47,7 +47,6 @@ def sum_squares_error(y, t):
 
 
 # cross entropy error
-# t = one hot
 def cross_entropy_error_non_batch(y, t):
     delta = 1.e-7
     e = -np.sum(t * np.log(y+delta))
@@ -56,7 +55,13 @@ def cross_entropy_error_non_batch(y, t):
 
 # cross entropy error
 # t = one hot
-# for batch
 def cross_entropy_error(y, t):
-    pass
+    if y.ndim == 1:
+        y = y.reshape(1, y.size)
+        t = t.reshape(1, t.size)
 
+    batch_size = y.shape[0]
+
+    delta = 1.e-7
+    e = -np.sum(t * np.log(y+delta)) / batch_size
+    return e

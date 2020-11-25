@@ -6,7 +6,7 @@ from pathlib import Path
 try:
     sys.path.append(os.path.join(Path(os.getcwd()).parent, 'lib'))
     from mnist import load_mnist
-#    from common import cross_entropy_error
+    from common import cross_entropy_error
 except ImportError:
     print('Library Module Can Not Found')
 
@@ -41,7 +41,7 @@ y = np.array([
 ])
 
 
-
+print(cross_entropy_error(y, t))
 
 
 

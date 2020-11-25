@@ -6,7 +6,7 @@ import numpy as np
 from pathlib import Path
 try:
     sys.path.append(os.path.join(Path(os.getcwd()).parent, 'lib'))
-    from common import cross_entropy_error_non_batch
+    from common import cross_entropy_error
 except ImportError:
     print('Library Module Can Not Found')
 
@@ -18,6 +18,6 @@ y3 = np.array([0., 0.92, 0.02, 0., 0.02, 0.03, 0.01, 0., 0., 0.])
 
 
 # test
-print(cross_entropy_error_non_batch(y1, t))
-print(cross_entropy_error_non_batch(y2, t))
-print(cross_entropy_error_non_batch(y3, t))
+print(cross_entropy_error(y1, t))
+print(cross_entropy_error(y2, t))
+print(cross_entropy_error(y3, t))
