@@ -14,7 +14,7 @@ except ImportError:
 network = init_network()
 
 # 2. 학습/시험 데이터 가져오기
-(train_x, train_t), (test_x, test_t) = load_mnist(normalize=True, flatten=True, one_hot_label=True)
+(train_x, train_t), (test_x, test_t) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
 
 xlen = len(test_x)
 randidx = np.random.randint(0, xlen, 1).reshape(())
