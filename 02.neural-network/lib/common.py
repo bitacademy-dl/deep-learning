@@ -40,3 +40,23 @@ def softmax(x):
     return y
 
 
+# Sum of Squares Error(SSE)
+def sum_squares_error(y, t):
+    e = 0.5 * np.sum((y-t)**2)
+    return e
+
+
+# cross entropy error
+# t = one hot
+def cross_entropy_error_non_batch(y, t):
+    delta = 1.e-7
+    e = -np.sum(t * np.log(y+delta))
+    return e
+
+
+# cross entropy error
+# t = one hot
+# for batch
+def cross_entropy_error(y, t):
+    pass
+
