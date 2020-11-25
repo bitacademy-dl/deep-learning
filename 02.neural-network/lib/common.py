@@ -27,9 +27,16 @@ def softmax_overflow(x):
     return exp_x / np.sum(exp_x)
 
 
-# softmax activation function: 오버플로우 대책으로 수정함수
+# softmax activation function: 오버플로우 대책 & 배치처리지원 수정
 def softmax(x):
+    if x.ndim == 2:
+        x = x.T
+        x = x - np.max(x, axis=0)
+        y = np.exp(x) / np.sum(np.exp(x), axis=0)
+        return y.T
+
     x = x - np.max(x)
-    return np.exp(x) / np.sum(np.exp(x))
+    y = np.exp(x) / np.sum(np.exp(x))
+    return y
 
 
