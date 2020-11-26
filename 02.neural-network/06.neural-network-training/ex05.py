@@ -28,8 +28,6 @@ network.initialize(sz_input=train_x.shape[1], sz_hidden=50, sz_output=train_t.sh
 train_losses = []
 
 for idx in range(numiters):
-    # stopwatch:start
-    start = time.time()
 
     # 4-1. fetch mini-batch
     batch_mask = np.random.choice(sztrain, szbatch)
@@ -37,7 +35,9 @@ for idx in range(numiters):
     train_t_batch = train_t[batch_mask]
 
     # 4-2. gradient
+    stime = time.time()             # stopwatch: start
     gradient = network.numerical_gradient_net(train_x_batch, train_t_batch)
+    elapsed = time.time() - stime   # stopwatch: end
 
     # 4-3. update parameter
     for key in network.params:
@@ -47,9 +47,7 @@ for idx in range(numiters):
     loss = network.loss(train_x_batch, train_t_batch)
     train_losses.append(loss)
 
-    # stopwatch:start
-    end = time.time()
-    print(f'#{idx+1}: loss:{loss}, elapsed time: {end-start}s')
+    print(f'#{idx+1}: loss:{loss}, elapsed time: {elapsed}s')
 
 # serialize train loss
 train_loss_file = os.path.join(os.getcwd(), 'dataset', 'twolayer-train-loss.pkl')
