@@ -91,3 +91,29 @@ def numerical_diff1(f, w, x, t):
 
 
 numerical_gradient1 = numerical_diff1
+
+
+def numerical_diff2(f, w):
+    h = 1e-4
+    gradient = np.zeros_like(w)
+
+    it = np.nditer(w, flags=['multi_index'], op_flags=['readwrite'])
+    while not it.finished:
+        idx = it.multi_index
+        temp = w[idx]
+
+        w[idx] = temp + h
+        h1 = f(w)
+
+        w[idx] = temp - h
+        h2 = f(w)
+
+        gradient[idx] = (h1 - h2) / (2 * h)
+
+        w[idx] = temp   # 값복원
+        it.iternext()
+
+    return gradient
+
+
+numerical_gradient2 = numerical_diff2
