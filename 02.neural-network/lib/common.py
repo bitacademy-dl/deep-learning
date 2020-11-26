@@ -74,9 +74,17 @@ def numerical_diff1(f, w, x, t):
     it = np.nditer(w, flags=['multi_index'], op_flags=['readwrite'])
     while not it.finished:
         idx = it.multi_index
+        temp = w[idx]
 
+        w[idx] = temp + h
+        h1 = f(w, x, t)
 
+        w[idx] = temp - h
+        h2 = f(w, x, t)
 
+        gradient[idx] = (h1 - h2) / (2 * h)
+
+        w[idx] = temp   # 값복원
         it.iternext()
 
     return gradient

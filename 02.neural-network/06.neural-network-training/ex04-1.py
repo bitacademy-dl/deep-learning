@@ -26,7 +26,7 @@ _w = np.array([
 ])                              # weight          2 x 3 matrix
 
 g = numerical_gradient1(loss, _w, _x, _t)
-
+print(g)
 
 
 
