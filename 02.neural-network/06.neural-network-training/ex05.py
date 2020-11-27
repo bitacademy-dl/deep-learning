@@ -34,7 +34,6 @@ train_accuracies = []
 test_accuracies = []
 
 for idx in range(numiters+1):
-
     # 4-1. fetch mini-batch
     batch_mask = np.random.choice(sztrain, szbatch)
     train_x_batch = train_x[batch_mask]                 # 100 x 784
