@@ -41,6 +41,15 @@ def loss(x, t):
     return e
 
 
+def accuracy(x, t):
+    y = forward_propagation(x)
+    y = np.argmax(y, axis=1)
+    t = np.argmax(t, axis=1)
+
+    acc = np.sum(y == t) / float(x.shape[0])
+    return acc
+
+
 def numerical_gradient_net(x, t):
     h = 1e-4
     gradient = dict()

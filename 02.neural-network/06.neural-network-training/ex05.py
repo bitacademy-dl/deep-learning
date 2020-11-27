@@ -1,3 +1,6 @@
+# Training Neural Network
+# Data Set: MNIST Handwritten Digit Dataset
+# Network: TwoLayerNet
 import os
 import pickle
 import sys
@@ -16,9 +19,9 @@ except ImportError:
 (train_x, train_t), (test_x, test_t) = load_mnist(normalize=True, flatten=True, one_hot_label=True)
 
 # 2.hyperparameters
-numiters = 1  # 10000
+numiters = 1  # ?
 szbatch = 100
-sztrain = train_x.shape[0]
+sztrain = train_x.shape[0]  # 60,000
 ratelearning = 0.1
 
 # 3.initialize network
@@ -31,8 +34,8 @@ for idx in range(numiters):
 
     # 4-1. fetch mini-batch
     batch_mask = np.random.choice(sztrain, szbatch)
-    train_x_batch = train_x[batch_mask]
-    train_t_batch = train_t[batch_mask]
+    train_x_batch = train_x[batch_mask]                 # 100 x 784
+    train_t_batch = train_t[batch_mask]                 # 100 x 10
 
     # 4-2. gradient
     stime = time.time()             # stopwatch: start
