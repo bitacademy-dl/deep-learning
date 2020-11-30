@@ -16,26 +16,37 @@ orangecount = 5
 discount = 0.9
 
 # layers
+layer1_1 = Multiply()
+layer1_2 = Multiply()
+layer2 = Add()
+layer3 = Multiply()
 
 # forward
-appleprice = 0
-orangeprice = 0
-appleorangeprice = 0
-totalprice = 0
+appleprice = layer1_1.forward(apple, applecount)
+print(f'appleprice={appleprice}')
+
+orangeprice = layer1_2.forward(orange, orangecount)
+print(f'orangeprice={orangeprice}')
+
+appleorangeprice = layer2.forward(appleprice, orangeprice)
+print(f'appleorangeprice={appleorangeprice}')
+
+totalprice = layer3.forward(appleorangeprice, discount)
+print(f'totalprice={totalprice}')
 
 print("=====================================")
 
 # backward propagation
 dtotalprice = 1
 
-dappleorangeprice = 0
-ddiscount = 0
+dappleorangeprice, ddiscount = layer3.backward(1)
+print(f'dappleorangeprice={dappleorangeprice}, ddiscount={ddiscount}')
 
-dappleprice = 0
-dorangeprice = 0
+dappleprice, dorangeprice = layer2.backward(dappleorangeprice)
+print(f'dappleprice={dappleprice}, dorangeprice={dorangeprice}')
 
-dapple = 0
-dapplecount = 0
+dapple, dapplecount = layer1_1.backward(dappleprice)
+print(f'dapple={dapple}, dapplecount={dapplecount}')
 
-dorange = 0
-dorangecount = 0
+dorange, dorangecount = layer1_2.backward(dorangeprice)
+print(f'dorange={dorange}, dorangecount={dorangecount}')
