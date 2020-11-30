@@ -1,7 +1,6 @@
 # Training Neural Network
 # Data Set: MNIST Handwritten Digit Dataset
 # Network: TwoLayerNet
-import datetime
 import os
 import pickle
 import sys
