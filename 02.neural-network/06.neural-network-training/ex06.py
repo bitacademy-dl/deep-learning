@@ -6,7 +6,7 @@ import os
 import pickle
 from matplotlib import pyplot as plt
 
-train_loss_file = os.path.join(os.getcwd(), 'dataset', 'twolayer_train_loss.pkl')
+train_loss_file = os.path.join(os.getcwd(), 'dataset', 'twolayer_train_losses.pkl')
 train_losses = None
 
 with open(train_loss_file, 'rb') as f:
