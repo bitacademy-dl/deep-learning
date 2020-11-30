@@ -5,7 +5,7 @@ import numpy as np
 from pathlib import Path
 try:
     sys.path.append(os.path.join(Path(os.getcwd()).parent, 'lib'))
-    from common import softmax, sigmoid, cross_entropy_error
+    from common import softmax, relu, sigmoid, cross_entropy_error
 except ImportError:
     print('Library Module Can Not Found')
 
