@@ -53,7 +53,14 @@ network.loss = loss
 # ========================================================
 
 # 1.load training/test data
-_x, _t = np.array([2.6, 3.9, 5.6]), np.array([0, 0, 1])
+# 배치테스트 N=2
+_x, _t = np.array([
+    [2.6, 3.9, 5.6],
+    [1.76, 2.19, 0.6]
+]), np.array([
+    [0, 0, 1],
+    [1, 0, 0],
+])
 
 # 2.hyperparameter
 
