@@ -20,7 +20,7 @@ except ImportError:
 
 # 2. hyperparameters
 batch_size = 100
-epochs = 20
+epochs = 30
 learning_rate = 0.1
 
 # 3. model frame
@@ -66,17 +66,22 @@ for idx in range(1, iterations+1):
         test_accuracies.append(test_accuracy)
 
         print(f'\nEpoch {epoch_idx:02d}/{epochs:02d} ')
-        print(f'{int(idx/epoch_idx)}/{epoch_size} - {elapsed*1000:.3f}ms - loss:{loss:.3f}, ')
+        print(f'{int(idx/epoch_idx)}/{epoch_size} - {elapsed*1000:.3f}ms - loss:{loss:.3f} - accuracy:(train, test)=({train_accuracy:.3f}, {test_accuracy:.3f})')
 
         elapsed = 0
 
 # 5. fitting history
-params_file = os.path.join(os.getcwd(), 'dataset', f'twolayer_params.pkl')
-trainloss_file = os.path.join(os.getcwd(), 'dataset', f'twolayer_trainloss.pkl')
-trainacc_file = os.path.join(os.getcwd(), 'dataset', f'twolayer_trainacc.pkl')
-testacc_file = os.path.join(os.getcwd(), 'dataset', f'twolayer_testacc.pkl')
+model_directory = os.path.join(os.getcwd(), 'model')
+if not os.path.exists(model_directory):
+    os.mkdir(model_directory)
 
-print(f'creating pickle...')
+params_file = os.path.join(model_directory, 'twolayer_params.pkl')
+trainloss_file = os.path.join(model_directory, 'twolayer_trainloss.pkl')
+trainacc_file = os.path.join(model_directory, 'twolayer_trainacc.pkl')
+testacc_file = os.path.join(model_directory, 'twolayer_testacc.pkl')
+
+print(f'\nsave model...')
+
 with open(params_file, 'wb') as f_params, \
         open(trainloss_file, 'wb') as f_trainloss, \
         open(trainacc_file, 'wb') as f_trainacc, \
@@ -85,4 +90,5 @@ with open(params_file, 'wb') as f_params, \
     pickle.dump(train_losses, f_trainloss, -1)
     pickle.dump(train_accuracies, f_trainacc, -1)
     pickle.dump(test_accuracies, f_testacc, -1)
-print('done!')
+
+print('done')
