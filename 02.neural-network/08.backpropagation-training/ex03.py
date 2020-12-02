@@ -2,10 +2,8 @@
 # Data Set: MNIST Handwritten Digit Dataset
 # Network: TwoLayerNet2
 # Test: Backpropagation Gradient vs Numerical Gradient
-
 import os
 import sys
-import time
 import numpy as np
 from pathlib import Path
 try:
