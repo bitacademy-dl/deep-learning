@@ -23,7 +23,7 @@ batch_size = 100
 epochs = 30
 learning_rate = 0.1
 
-# 3. model frame
+# 3. model frame config
 network.initialize(input_size=train_x.shape[1], hidden_size=50, output_size=train_t.shape[1])
 
 # 4. model fitting
