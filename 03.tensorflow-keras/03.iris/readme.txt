@@ -2,7 +2,7 @@ Iris Species Multi-Class Classification Model(Iris 품종 예측 모델)
 
 01. installation
 $ pip install pandas
-# pip install sklearn
+$ pip install sklearn
 
 02. dataset
 0: sepal length (꽃잎 크기)
