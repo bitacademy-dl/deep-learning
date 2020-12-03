@@ -35,14 +35,14 @@ predict = model.predict(data)
 percentage = float(predict[0] * 100)
 print(f'\n당뇨 발병 확률:{percentage:.2f}%')
 
-# # 8. graph
-# xlen = np.arange(len(loss))
-# plt.plot(xlen, loss, marker='.', c='blue', label='loss')
-#
-# plt.xlabel('Epoch')
-# plt.ylabel('Loss')
-#
-# plt.show()
+# 8. graph
+xlen = np.arange(len(loss))
+plt.plot(xlen, loss, marker='.', c='blue', label='loss')
+
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+
+plt.show()
 
 
 
