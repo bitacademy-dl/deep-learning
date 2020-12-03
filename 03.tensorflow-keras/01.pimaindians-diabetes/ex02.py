@@ -3,13 +3,18 @@
 import numpy as np
 
 # 1.load training/test data
-dataset = np.loadtxt('./dataset/pimaindians-diabetes.csv', delimiter=',')
-train_x = np.array(dataset[:, 0:8])
-train_t = np.array(dataset[:, 8])
+from tensorflow.python.keras import Sequential
+from tensorflow.python.keras.layers import Dense
 
+dataset = np.loadtxt('./dataset/pimaindians-diabetes.csv', delimiter=',')
+x = np.array(dataset[:, 0:8])
+t = np.array(dataset[:, 8])
+# print(x.shape, t.shape)
 
 # 2. model frame config
-
+model = Sequential()
+model.add(Dense(50, input_size=x.shape[1], activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
 
 # 3. model fitting config
 
