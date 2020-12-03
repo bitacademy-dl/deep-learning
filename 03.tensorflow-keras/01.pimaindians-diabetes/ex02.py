@@ -1,5 +1,5 @@
-# pimaindians diabetes model fitting
-# tensor-keras
+# Pima Indians Diabetes Prediction Model(피마 인디언 당요병 예측 모델)
+# Model Fitting(Training, 학습)
 import numpy as np
 from matplotlib import pyplot as plt
 from tensorflow.python.keras import Sequential

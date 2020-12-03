@@ -1,3 +1,5 @@
+# Thoraric Surgery Prediction Model(폐암 발병 예측 모델)
+# Explore Dataset(데이터 탐색)
 import numpy as np
 import pandas as pd
 
