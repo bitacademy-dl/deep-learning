@@ -45,8 +45,8 @@ species = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
 print(f'예측 되는 품종은 {species[index]} 입니다.')
 
 # 7. graph
-# xlen = np.arange(len(loss))
-# plt.plot(xlen, loss, marker='.', c='blue', label='loss')
-# plt.xlabel('Epoch')
-# plt.ylabel('Loss')
-# plt.show()
+xlen = np.arange(len(loss))
+plt.plot(xlen, loss, marker='.', c='blue', label='loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.show()
