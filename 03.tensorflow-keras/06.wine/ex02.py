@@ -35,8 +35,8 @@ result = model.evaluate(x, t, verbose=0)
 print(f'\n(Loss, Accuracy)=({result[0]}, {result[1]})')
 
 # 6. predict
-data = np.array([[5.9, 0.26, 0.21, 12.5, 0.034, 36, 152, 0.9972, 3.28, 0.43, 9.5, 6]])
-predict = model.predict(data)
-index = np.argmax(predict)
-wines = ['Red Wine', 'White Wine']
-print(wines[index])
+# data = np.array([[5.9, 0.26, 0.21, 12.5, 0.034, 36, 152, 0.9972, 3.28, 0.43, 9.5, 6]])
+# predict = model.predict(data)
+# index = np.argmax(predict)
+# wines = ['Red Wine', 'White Wine']
+# print(wines[index])

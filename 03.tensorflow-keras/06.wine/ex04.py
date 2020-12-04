@@ -1,10 +1,11 @@
 # Wine Binary Classification Model(와인 종류 분류 모델)
-# model fitting #2 - model update
+# model fitting #3 - model training graph
 import os
 import shutil
 
 import pandas as pd
 import numpy as np
+from matplotlib import pyplot as plt
 from tensorflow.python.keras import Sequential
 from tensorflow.python.keras.callbacks import ModelCheckpoint
 from tensorflow.python.keras.layers import Dense
@@ -47,9 +48,26 @@ checkpoint = ModelCheckpoint(
 )
 
 # 5. model fitting
-model.fit(x, t, validation_split=0.2, epochs=200, batch_size=200, verbose=0, callbacks=[checkpoint])
+history = model.fit(x, t, validation_split=0.2, epochs=500, batch_size=200, verbose=0, callbacks=[checkpoint])
 
 # 6. result
 result = model.evaluate(x, t, verbose=0)
 print(f'\n(Loss, Accuracy)=({result[0]}, {result[1]})')
+
+# 7. graph
+val_loss = history.history['val_loss']
+accuracy = history.history['accuracy']
+
+xlen = np.arange(len(accuracy))
+plt.plot(xlen, val_loss, marker='.', c='red', label='Test Loss')
+plt.plot(xlen, accuracy, marker='.', c='blue', label='Train Accuracy')
+
+plt.grid()
+plt.xlabel('Epoch')
+plt.ylabel('Acc-Loss')
+plt.legend(loc='best')
+
+plt.show()
+
+
 
