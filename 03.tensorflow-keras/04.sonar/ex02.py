@@ -1,14 +1,12 @@
 # Sonar Mineral Binary Classification Model(초음파 광물 예측 모델)
 # Model Fitting #1
-
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
-
-# 1.load training/test data
 from tensorflow.python.keras import Sequential
 from tensorflow.python.keras.layers import Dense
 
+# 1.load training/test data
 dateset_file = './dataset/sonar.csv'
 df = pd.read_csv(dateset_file, header=None)
 
