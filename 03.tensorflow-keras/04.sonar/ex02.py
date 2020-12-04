@@ -28,10 +28,9 @@ model.add(Dense(2, input_dim=10, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # 4. model fitting
-history = model.fit(x, t, epochs=200, batch_size=5, verbose=1)
+model.fit(x, t, epochs=200, batch_size=5, verbose=1)
 
 # 5. result
-loss = history.history['loss']
 result = model.evaluate(x, t, verbose=0)
 print(f'\n(Loss, Accuracy)=({result[0]}, {result[1]})')
 
