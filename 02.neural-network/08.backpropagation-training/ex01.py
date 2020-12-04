@@ -10,7 +10,7 @@ from pathlib import Path
 try:
     sys.path.append(os.path.join(Path(os.getcwd()).parent, 'lib'))
     from mnist import load_mnist
-    import twolayernet2 as network
+    import multilayernet as network
 except ImportError:
     print('Library Module Can Not Found')
 
@@ -24,7 +24,7 @@ train_size = train_x.shape[0]
 learning_rate = 0.1
 
 # 3.initialize network
-network.initialize(input_size=train_x.shape[1], hidden_size=50, output_size=train_t.shape[1])
+network.initialize(input_size=train_x.shape[1], hidden_size=[50], output_size=train_t.shape[1])
 
 # 4.training
 train_losses = []
