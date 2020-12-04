@@ -85,6 +85,8 @@ for optimizer_key in optimizers.keys():
 
             elapsed = 0
 
+    network.params = dict()
+    network.layers = []
 
 # 5. graph
 def smooth_curve(x):
