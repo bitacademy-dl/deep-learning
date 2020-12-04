@@ -1,7 +1,7 @@
 # Training Neural Network
 # Data Set: MNIST Handwritten Digit Dataset
 # Network: MultiLayerNet
-#
+# Optimizer 성능 비교
 import os
 import pickle
 import sys
