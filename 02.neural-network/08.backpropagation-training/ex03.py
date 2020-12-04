@@ -1,6 +1,6 @@
 # Training Neural Network
 # Data Set: MNIST Handwritten Digit Dataset
-# Network: TwoLayerNet2
+# Network: MultiLayerNet
 # Test: Backpropagation Gradient vs Numerical Gradient
 import os
 import sys

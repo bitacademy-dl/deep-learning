@@ -1,6 +1,6 @@
 # Training Neural Network
 # Data Set: MNIST Handwritten Digit Dataset
-# Network: TwoLayerNet
+# Network: MultiLayerNet
 # Estimation: Training
 import os
 import pickle
